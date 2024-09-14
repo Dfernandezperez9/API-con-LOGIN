@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personajes</title>
+</head>
+<body>
+  <h1><%= mensajeBienvenida %></h1>
+  <input type="text" id="nombre-personaje" placeholder="Buscar personaje">
+  <button id="buscar-personaje"  onclick="buscarPersonaje()">Buscar</button>
+  <script>
+    function buscarPersonaje() {
+      const nombre = document.getElementById('nombre-personaje').value;
+      window.location.href = `/character/${nombre}`;
+    }
+  </script>
+  <a href="/search">Volver</a>
+  <a href="/logout">Cerrar sesión</a>
+  <h2>Personajes:</h2>
+  <pre><%= JSON.stringify(personajes, null, 2) %></pre>
+</body>
+</html>
